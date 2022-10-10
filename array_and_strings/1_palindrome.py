@@ -1,3 +1,10 @@
+"""
+Example 1: Return true if a given string is a palindrome, false otherwise.
+
+A string is a palindrome if it reads the same forwards as backwards.
+That means, after reversing it, it is still the same string. For example: "abcdcba", or "racecar".
+"""
+
 def is_palindrome(word):
     left_index = 0
     right_index = len(word) - 1
