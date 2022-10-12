@@ -20,3 +20,4 @@ if __name__ == "__main__":
     assert(is_palindrome('racecar') == True)
     assert(is_palindrome('anitalavalatina') == True)
     assert(is_palindrome('oscar') == False)
+    assert(is_palindrome('o') == True)
