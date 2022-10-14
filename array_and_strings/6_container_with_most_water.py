@@ -19,8 +19,6 @@ class Solution:
         left = 0
         right = len(height) - 1
         max_area = 0
-        lowest_height = 0
-        left_to_right = None
         while left < right:
             # Computes width.
             width = right - left
@@ -36,4 +34,6 @@ class Solution:
 
 if __name__ == "__main__":
     assert(Solution().maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]) == 49)
+    assert(Solution().maxArea([1, 100, 6, 2, 5, 4, 8, 3, 7]) == 49)
+    assert(Solution().maxArea([1, 100, 6, 100, 5, 99, 100, 3, 7]) == 500)
     assert(Solution().maxArea([1, 1]) == 1)
