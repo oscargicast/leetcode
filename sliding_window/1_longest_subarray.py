@@ -24,3 +24,4 @@ if __name__ == "__main__":
     assert(longest_subarray([3, 1, 2, 7, 4, 2, 1, 1, 5], 8) == 4)
     assert(longest_subarray([3, 1, 3, 7, 5], 10) == 3)
     assert(longest_subarray([3, 1, 3, 2, 1, 1, 1], 10) == 6)
+    assert(longest_subarray([3, 1, 2, 7, 4, 2, 1, 1, 5], 8) == 4)
