@@ -28,3 +28,4 @@ if __name__ == "__main__":
     assert(longest_substring("1111101111") == 10)
     assert(longest_substring("1111101011") == 7)
     assert(longest_substring("0111101011") == 6)
+    assert(longest_substring("11001011") == 4)
