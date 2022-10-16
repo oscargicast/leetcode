@@ -6,14 +6,25 @@ find the sum of the subarray with the largest sum whose length is k.
 from typing import List
 
 
+# def max_sum_of_k_length(nums: List[int], k: int) -> int:
+#     left = max_sum = current_sum = 0
+#     for right in range(len(nums)):
+#         current_sum += nums[right]
+#         if right - left + 1 == k:
+#             max_sum = max(max_sum, current_sum)
+#             current_sum -= nums[left]
+#             left += 1
+#     return max_sum
+
+
 def max_sum_of_k_length(nums: List[int], k: int) -> int:
-    left = max_sum = current_sum = 0
-    for right in range(len(nums)):
-        current_sum += nums[right]
-        if right - left + 1 == k:
-            max_sum = max(max_sum, current_sum)
-            current_sum -= nums[left]
-            left += 1
+    # First approach.
+    current_sum = sum(nums[:k])
+    max_sum = current_sum
+    for i in range(k, len(nums)):
+        current_sum += nums[i] - nums[i - k]
+        max_sum = max(max_sum, current_sum)
+    print(max_sum)
     return max_sum
 
 
