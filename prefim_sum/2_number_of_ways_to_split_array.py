@@ -15,11 +15,10 @@ def number_of_splits(nums: List[int]) -> int:
     prefix = [nums[0]]
     for i in range(1, len(nums)):
         prefix.append(nums[i] + prefix[-1])
-    prefix.append(0)
     ans = 0
     for i in range(len(nums) - 1):
         left_window = prefix[i]
-        right_window = prefix[len(nums) - 1] - prefix[i]
+        right_window = prefix[-1] - prefix[i]
         if right_window <= left_window:
             ans += 1
     return ans
