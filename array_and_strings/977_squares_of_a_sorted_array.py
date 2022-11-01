@@ -1,5 +1,5 @@
 """
-Squares of a Sorted Array
+977. Squares of a Sorted Array
 
 Given an integer array nums sorted in non-decreasing order,
 return an array of the squares of each number sorted in non-decreasing order.
@@ -9,19 +9,21 @@ from typing import List
 
 
 def get_ordered_squares(nums: List[int]) -> List[int]:
-    # Order using two pointers.
+    # Using two pointers.
     left = 0
     right = len(nums) - 1
-    ordered_abs_list = []
+    ordered_abs_list = [0] * len(nums)
+    index = len(nums) - 1
     while left <= right:
         if abs(nums[left]) <= abs(nums[right]):
-            ordered_abs_list.append(nums[right] ** 2)
+            ordered_abs_list[index] = nums[right] ** 2
             right -= 1
+            index -= 1
             continue
-        ordered_abs_list.append(nums[left] ** 2)
+        ordered_abs_list[index] = nums[left] ** 2
         left += 1
-    # Order in n building a new array. 
-    return ordered_abs_list[::-1]
+        index -= 1
+    return ordered_abs_list
 
 
 if __name__ == '__main__':
